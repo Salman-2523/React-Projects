@@ -5,6 +5,7 @@
 }
 body {
   background-color: #282d35;
+  font-family: Inter;
 }
 nav {
   display: flex;
@@ -19,16 +20,18 @@ nav {
 }
 .nav--icon-text {
   color: #00d8ff;
+  font-size: 22px;
 }
 
 .nav--title {
   margin-left: auto;
   color: #deebf8;
+  font-size:16px;
 }
-main{
-    padding:80px 50px 0px 280px;
-    color: white;
-
+main {
+  padding: 80px 50px 0px 280px;
+  color: white;
+  
 }
 h1 {
   font-family: "Inter";
@@ -39,15 +42,17 @@ h1 {
   letter-spacing: -0.05em;
   color: #ffffff;
 }
-ul{
-    padding-top:30px;
-    padding-left:30px;
+ul {
+  padding-top: 30px;
+  padding-left: 50px;
+  font-weight: 400;
 }
-ul>li{
-    padding-block: 15px;
+ul > li {
+  padding-block: 15px;
+  font-weight: 400;
+  font-size: 18px;
 }
-li::marker{
-   color: #61DAFB;
-   font-size: 1.4rem;
-
+li::marker {
+  color: #61dafb;
+  font-size: 1.4rem;
 }

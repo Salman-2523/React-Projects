@@ -1,4 +1,4 @@
-# Business Card - Second Project
+# Second Project - Business Card
 
 ## To run app locally:-
 - npm i

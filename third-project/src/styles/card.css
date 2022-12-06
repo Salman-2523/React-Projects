@@ -1,0 +1,53 @@
+.card {
+  width: 177px;
+  height: 302px;
+  position: relative;
+}
+
+.card--star-text {
+  display: flex;
+  align-items: center;
+}
+.card--star-text > p {
+  padding: 0;
+}
+
+.card--description,
+.card--price,
+.card--star-text > p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 110%;
+  color: #222222;
+}
+
+#span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 110%;
+  /* identical to box height, or 13px */
+
+  color: #222222;
+}
+.card--price {
+  padding-top: 8px;
+}
+.star {
+  padding-right: 8px;
+}
+.card--img {
+  width: 100%;
+}
+.card--badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 4px;
+    font-weight: bold;
+}

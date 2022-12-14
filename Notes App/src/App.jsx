@@ -61,6 +61,13 @@ export default function App() {
     );
   }
 
+  function deleteNote(event,noteId) {
+    event.stopPropagation();
+    setNotes((oldNotes) => {
+      return oldNotes.filter((note) => note.id !== noteId);
+    });
+  }
+
   return (
     <main>
       {notes.length > 0 ? (
@@ -70,6 +77,7 @@ export default function App() {
             currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
+            deleteNote={deleteNote}
           />
           {currentNoteId && notes.length > 0 && (
             <Editor currentNote={findCurrentNote()} updateNote={updateNote} />

@@ -8,7 +8,7 @@ import {
   getItemFromLocalStorage,
   setItemToLocalStorage,
 } from "./utils/localStorage";
-
+import "./style.css";
 export default function App() {
   const allNotes = getItemFromLocalStorage("notes");
   const [notes, setNotes] = React.useState(() => allNotes || []);

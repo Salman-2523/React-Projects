@@ -17,6 +17,6 @@ Welcome to the Note-Taking App! This app allows you to create, modify, and delet
 - npm i
 - npm run dev
 
-## Live Demo - https://notes-app-eight-eta.vercel.app/
+## Live Demo - <a href= "https://notes-app-eight-eta.vercel.app/" target="_blank">https://notes-app-eight-eta.vercel.app/ </a>
 
 **Note**:- This app uses react version 17 because react-mde doesn't support new version of react

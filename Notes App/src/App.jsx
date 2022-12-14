@@ -11,7 +11,7 @@ import {
 
 export default function App() {
   const allNotes = getItemFromLocalStorage("notes");
-  const [notes, setNotes] = React.useState(()=> allNotes || []);
+  const [notes, setNotes] = React.useState(() => allNotes || []);
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
   );
@@ -31,13 +31,26 @@ export default function App() {
   }
 
   function updateNote(text) {
-    setNotes((oldNotes) =>
-      oldNotes.map((oldNote) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, body: text }
-          : oldNote;
-      })
-    );
+    setNotes((oldNotes) => {
+      let updatedArr = [];
+      oldNotes.map((note) => {
+        if (note.id === currentNoteId) {
+          const updatedNote = { ...note, body: text };
+          updatedArr.unshift(updatedNote);
+        } else {
+          updatedArr.push(note);
+        }
+      });
+      return updatedArr;
+    });
+
+    // setNotes((oldNotes) =>
+    //   oldNotes.map((oldNote) => {
+    //     return oldNote.id === currentNoteId
+    //       ? { ...oldNote, body: text }
+    //       : oldNote;
+    //   })
+    // )
   }
 
   function findCurrentNote() {

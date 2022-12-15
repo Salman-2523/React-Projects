@@ -1,11 +1,11 @@
 import "../styles/intro.css";
 
-const Intro = () => {
+const Intro = ({ startQuiz }) => {
   return (
     <header className="intro--header">
       <h1>Quizzical</h1>
       <p>Some Description if needed</p>
-      <button>Start Quiz</button>
+      <button onClick={startQuiz}>Start Quiz</button>
     </header>
   );
 };

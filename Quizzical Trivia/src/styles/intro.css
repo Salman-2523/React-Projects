@@ -1,0 +1,40 @@
+.intro--header {
+  max-width: 550px;
+  height: 550px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "Karla", sans-serif;
+  margin-top: 5%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #f5f7fb;
+}
+
+.intro--header > h1 {
+  padding-bottom: 7px;
+  font-family: "Karla";
+  font-size: 31px;
+  font-weight: 700;
+}
+.intro--header > p {
+  padding-bottom: 30px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.intro--header > button {
+  width: 193px;
+  height: 52px;
+  border-radius: 15px;
+  background: #4d5b9e;
+  border: none;
+  color: #f5f7fb;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Karla", "sans-serif";
+  cursor: pointer;
+}

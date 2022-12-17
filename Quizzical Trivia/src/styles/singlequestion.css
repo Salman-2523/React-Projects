@@ -13,39 +13,37 @@
   line-height: 19px;
   letter-spacing: 0em;
   padding-bottom: 12px;
-
 }
 
 .options--container {
   display: flex;
-  max-width: 500px;
+  max-width: 550px;
   gap: 20px;
   padding-bottom: 14px;
 }
 
 .options--container > div {
   max-width: 200px;
-  height: 20.65px;
+  height: 30.65px;
   border: 1px solid #ccc;
   border-radius: 7px;
   font-family: "Inter";
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 12px;
   letter-spacing: 0em;
   text-align: center;
   color: #293264;
-  padding-top: 4px;
+  cursor: pointer;
+  padding-top:7px;
+  padding-bottom: 7px;
   padding-left: 8px;
   padding-right: 8px;
-  cursor: pointer;
 }
-.options--container > div:nth-child(1) {
+/* .options--container > div:nth-child(1) {
   background-color: #d6dbf5;
-}
-hr{
-    width:500px;
-    background-color: #DBDEF0;
-        
-
+} */
+hr {
+  width: 540px;
+  background-color: #dbdef0;
 }

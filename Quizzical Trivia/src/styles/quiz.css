@@ -1,5 +1,5 @@
 .quiz--container {
-  max-width: 550px;
+  max-width: 600px;
   height: 600px;
   display: flex;
   margin: 0 auto;
@@ -12,6 +12,7 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+  
 }
 .quiz--button {
   background: #4d5b9e;
@@ -19,7 +20,7 @@
   width: 120px;
   height: 35px;
   font-family: "Inter";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 12px;
   letter-spacing: 0em;

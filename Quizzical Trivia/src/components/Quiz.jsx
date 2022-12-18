@@ -8,9 +8,8 @@ const Quiz = () => {
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [playAgain, setPlayAgain] = useState(false);
   const [wrongAnswers, setWrongAnswers] = useState([]);
-
+  const [userSelectedAnswers, setUserSelectedAnswers] = useState([]);
   const handleSubmit = () => {
-    // console.log("submit", count);
     setSubmit(true);
   };
 
@@ -19,9 +18,10 @@ const Quiz = () => {
     setSubmit((prevState) => !prevState);
     setCorrectAnswers([]);
     setWrongAnswers([]);
+    setUserSelectedAnswers([]);
   };
 
-  //   console.log(count);
+//   console.log(userSelectedAnswers);
   // we have questions array through which we can check if the user had submitted wrong answer
   // if yes don't let user submit another answer and keep the count of correct answers
   // check with another if condition and then keep the count
@@ -33,8 +33,8 @@ const Quiz = () => {
       .then((res) => res.json())
       .then(({ results }) => setQuestions(results));
   }, [playAgain]);
-  console.log("CA", correctAnswers);
-  console.log("WA", wrongAnswers);
+  //   console.log("CA", correctAnswers);
+  //   console.log("WA", wrongAnswers);
   return (
     <>
       {questions.length === 0 ? (
@@ -52,6 +52,9 @@ const Quiz = () => {
                     setCorrectAnswers={setCorrectAnswers}
                     setWrongAnswers={setWrongAnswers}
                     wrongAnswers={wrongAnswers}
+                    submit={submit}
+                    setUserSelectedAnswers={setUserSelectedAnswers}
+                    userSelectedAnswers={userSelectedAnswers}
                   />
                 );
               })}

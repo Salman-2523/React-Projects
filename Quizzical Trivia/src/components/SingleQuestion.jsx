@@ -4,9 +4,10 @@ import "../styles/singlequestion.css";
 
 const SingleQuestion = ({
   question,
-  incrementCounter,
   correctAnswers,
   setCorrectAnswers,
+  setWrongAnswers,
+  wrongAnswers,
 }) => {
   //store the correct answer at the random index else it will be obvious to guess the answer
   const correctAnswer = Math.ceil(Math.random() * 3);
@@ -14,15 +15,29 @@ const SingleQuestion = ({
   //   const [selected, setSelected] = useState(false);
   options.splice(correctAnswer, 0, question.correct_answer);
 
+  //    console.log(question);
+
   const handleChooseOption = (option) => {
     let select = correctAnswers.includes(question.correct_answer);
+    let wrongAnswer = question.incorrect_answers.includes(option);
+    // let checkWrongExist = options.includes(option)
+    let wrongExist = wrongAnswers.includes(option);
+
     if (select) {
       return;
     }
+    if (wrongExist) {
+      return;
+    }
+
+    if (wrongAnswer) {
+      setWrongAnswers((prevState) => {
+        return [...prevState, option];
+      });
+    }
 
     if (option === question.correct_answer) {
-      incrementCounter();
-      setCorrectAnswers((prevState) => {
+          setCorrectAnswers((prevState) => {
         return [...prevState, option];
       });
     }

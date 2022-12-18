@@ -5,21 +5,20 @@ import SingleQuestion from "./SingleQuestion";
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [submit, setSubmit] = useState(false);
-  const [count, setCount] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [playAgain, setPlayAgain] = useState(false);
+  const [wrongAnswers, setWrongAnswers] = useState([]);
 
-  const incrementCounter = () => setCount((prevCount) => prevCount + 1);
   const handleSubmit = () => {
-    console.log("submit", count);
+    // console.log("submit", count);
     setSubmit(true);
   };
 
   const handlePlayAgain = () => {
     setPlayAgain(true);
     setSubmit((prevState) => !prevState);
-    setCount(0);
     setCorrectAnswers([]);
+    setWrongAnswers([]);
   };
 
   //   console.log(count);
@@ -34,7 +33,8 @@ const Quiz = () => {
       .then((res) => res.json())
       .then(({ results }) => setQuestions(results));
   }, [playAgain]);
-  console.log(correctAnswers);
+  console.log("CA", correctAnswers);
+  console.log("WA", wrongAnswers);
   return (
     <>
       {questions.length === 0 ? (
@@ -48,9 +48,10 @@ const Quiz = () => {
                   <SingleQuestion
                     question={question}
                     key={nanoid()}
-                    incrementCounter={incrementCounter}
                     correctAnswers={correctAnswers}
                     setCorrectAnswers={setCorrectAnswers}
+                    setWrongAnswers={setWrongAnswers}
+                    wrongAnswers={wrongAnswers}
                   />
                 );
               })}
@@ -58,8 +59,9 @@ const Quiz = () => {
             <div className="quiz--button--container">
               {submit ? (
                 <>
-                  <span>
-                    You have Scored {count} out of {questions.length}
+                  <span style={{ paddingRight: "25px" }}>
+                    You have Scored {correctAnswers.length} out of{" "}
+                    {questions.length}
                   </span>
                   <button className="quiz--button" onClick={handlePlayAgain}>
                     Play again
@@ -69,7 +71,10 @@ const Quiz = () => {
                 <button
                   className="quiz--button"
                   onClick={handleSubmit}
-                  disabled={count < questions.length}
+                  disabled={
+                    correctAnswers.length + wrongAnswers.length <
+                    questions.length
+                  }
                 >
                   Check answers
                 </button>

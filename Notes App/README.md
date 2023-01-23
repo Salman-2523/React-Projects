@@ -1,4 +1,4 @@
-# Note-Taking App
+# Notes-Taking App
 Welcome to the Note-Taking App! This app allows you to create, modify, and delete notes to help you keep track of your thoughts and ideas.
 
 ## Features
